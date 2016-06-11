@@ -1,0 +1,101 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=/usr/local/myvim/bundles/vundle
+" All Bundles will install under /usr/local/myvim/bundles
+call vundle#rc('/usr/local/myvim/bundles')
+
+"==========================================
+" Vundle manager
+"==========================================
+Bundle 'gmarik/vundle'
+
+"==========================================
+" Skeleton manager
+"==========================================
+" 窗口管理
+Bundle 'anscoral/winmanager.vim'
+
+" 已打开的文件
+Bundle 'fholgado/minibufexpl.vim'
+
+" 导航栏
+Bundle 'scrooloose/nerdtree'
+
+" 标签栏
+Bundle 'majutsushi/tagbar'
+
+" 状态栏
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
+
+"==========================================
+" Theme manager
+"==========================================
+Bundle 'tomasr/molokai'
+Bundle 'chriskempson/vim-tomorrow-theme'
+
+"==========================================
+" Coding manager
+"==========================================
+" Fast edit
+" Code completion
+"Bundle 'Valloric/YouCompleteMe'
+" quoto completion
+"Bundle 'Raimondi/delimitMate'
+" html/xml tag completion
+"Bundle 'docunext/closetag.vim'
+"
+"Bundle 'scrooloose/nerdcommenter'
+"
+"Bundle 'tpope/vim-surround'
+"
+"Bundle 'bronson/vim-trailing-whitespace'
+"
+"Bundle 'junegunn/vim-easy-align'
+"
+"Bundle 'terryma/vim-expand-region'
+"
+"Bundle 'terryma/vim-multiple-cursors'
+"
+"Bundle 'kana/vim-textobj-user.git'
+"
+"Bundle 'kana/vim-textobj-line'
+"
+"Bundle 'kana/vim-textobj-entire.git'
+"
+"Bundle 'kana/vim-textobj-indent.git'
+"
+"Bundle 'ctrlpvim/ctrlp.vim'
+"
+"Bundle 'tacahiroy/ctrlp-funky'
+"
+"Bundle "dyng/ctrlsf.vim"
+"
+"Bundle 'tpope/vim-fugitive'
+"
+"Bundle 'airblade/vim-gitgutter'
+"
+"Bundle 'sjl/gundo.vim'
+
+
+" Fast jump
+"
+"Bundle 'Lokaltog/vim-easymotion'
+"
+"Bundle 'vim-scripts/matchit.zip'
+
+
+
+" Syntax checking
+"Bundle 'scrooloose/syntastic'
+
+" Edit
+
+" C/C++
+
+" Python
+"Bundle 'kevinw/pyflakes-vim'
+"Bundle 'hdima/python-syntax'
+
+" Lua

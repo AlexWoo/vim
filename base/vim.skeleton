@@ -1,0 +1,42 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 窗口管理
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 只使用 winmanager 调整窗口
+nmap    w=  :resize +3<CR>
+nmap    w-  :resize -3<CR>
+nmap    w]  :vertical resize +3<CR>
+nmap    w[  :vertical resize -3<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 导航栏
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" nerdtree
+" if open none, nerdtree when vim startup, otherwise, nerdtree will close
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" open or close nerdtree key
+map <c-n> :NERDTreeToggle<CR>
+" other config
+let NERDTreeIgnore=['\.o$', '\.a$', '\.so$']
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 标签栏
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tagbar
+let g:tagbar_autofocus = 1
+map <c-t> :TagbarToggle<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 状态栏
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-airline-themes
+let g:molokai = 1
+
+" vim-airline
+" set laststatus=2 in vim.base, for opening vim-airline
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif

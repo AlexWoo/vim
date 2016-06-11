@@ -1,0 +1,37 @@
+"==========================================
+"myvim
+"  |----vim.main
+"  |----bundles
+"  |       |-----vim.bundles
+"  |       |-----vundle
+"  |       |-----otherplugin
+"  |----base
+"  |       |-----vim.base
+"  |       |-----vim.skeleton
+"  |       |-----vim.theme
+"  |       |-----vim.conf
+"  |----coding
+"          |-----vim.coding
+"==========================================
+
+
+"==========================================
+" 插件加载
+"==========================================
+if filereadable(expand('/usr/local/myvim/bundles/vim.bundles'))
+    source /usr/local/myvim/bundles/vim.bundles
+endif
+
+"==========================================
+" 基础配置加载
+"==========================================
+if filereadable(expand('/usr/local/myvim/base/vim.base'))
+    source /usr/local/myvim/base/vim.base
+endif
+
+"==========================================
+" 编程语言加载
+"==========================================
+if filereadable(expand('/usr/local/myvim/coding/vim.coding'))
+    source /usr/local/myvim/coding/vim.coding
+endif
