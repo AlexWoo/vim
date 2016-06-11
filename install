@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 usage()
 {
@@ -25,13 +25,13 @@ if [ ! -d $MYVIM_PATH ];then
 fi
 
 cp -rf ./vim.main $MYVIM_PATH/
-cp -rf ./bundles/ $MYVIM_PATH/
-cp -rf ./base/    $MYVIM_PATH/
-cp -rf ./coding/  $MYVIM_PATH/
+cp -rf ./bundles  $MYVIM_PATH/
+cp -rf ./base     $MYVIM_PATH/
+cp -rf ./coding   $MYVIM_PATH/
 
-grep "^source $MYVIM_MAIN$" /etc/vimrc > /dev/null 2>&1
+grep "^source $MYVIM_MAIN$" ~/.vimrc > /dev/null 2>&1
 if [ $? -ne 0 ];then
-    echo "source $MYVIM_MAIN" >> /etc/vimrc
+    echo "source $MYVIM_MAIN" >> ~/.vimrc
 fi
 
 if [ ! -d $MYVIM_PATH/bundles/vundle ];then
@@ -40,4 +40,10 @@ fi
 
 vim +BundleUpdate +qall || exit 1
 
-yum install -y ctags || exit 1
+os=`uname -s`
+if [ $os = 'Linux' ];then
+    yum install -y ctags || exit 1
+elif [ $os = 'Darwin' ];then
+    brew install ctags || exit 1
+fi
+
