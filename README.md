@@ -11,11 +11,11 @@
 
 ### 按键说明
 
-- <SP\> 空格
-- <CR\> 回车
-- <Ctl\> Ctrl 键
-- <Alt\> Alt 键
-- <Lead\> , 键
+- \<SP\> 空格
+- \<CR\> 回车
+- \<Ctl\> Ctrl 键
+- \<Alt\> Alt 键
+- \<Lead\> , 键
 
 ### Vundle 插件操作命令
 
