@@ -40,7 +40,12 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 "==========================================
 " Fast edit
 " Code completion
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/ListToggle'
+Bundle 'scrooloose/syntastic'
+
+filetype plugin indent on
+
 " quoto completion
 "Bundle 'Raimondi/delimitMate'
 " html/xml tag completion
@@ -87,8 +92,6 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 
 
 
-" Syntax checking
-"Bundle 'scrooloose/syntastic'
 
 " Edit
 

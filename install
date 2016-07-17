@@ -43,7 +43,11 @@ vim +BundleUpdate +qall || exit 1
 os=`uname -s`
 if [ $os = 'Linux' ];then
     yum install -y ctags || exit 1
+    yum install -y cmake || exit 1
 elif [ $os = 'Darwin' ];then
     brew install ctags || exit 1
+    brew install cmake || exit 1
 fi
+
+/usr/local/myvim/bundles/YouCompleteMe/install.sh --clang-completer
 
