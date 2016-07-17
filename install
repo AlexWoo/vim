@@ -11,6 +11,13 @@ if [ $# -ne 0 ];then
     usage
 fi
 
+os=`uname -s`
+if [ $os = 'Linux' ];then
+    vimrc=/etc/vimrc
+elif [ $os = 'Darwin' ];then
+    vimrc=~/.vimrc
+fi
+
 # test vim installed
 vim --version > /dev/null 2>&1
 if [ $? -ne 0 ];then
@@ -29,9 +36,9 @@ cp -rf ./bundles  $MYVIM_PATH/
 cp -rf ./base     $MYVIM_PATH/
 cp -rf ./coding   $MYVIM_PATH/
 
-grep "^source $MYVIM_MAIN$" ~/.vimrc > /dev/null 2>&1
+grep "^source $MYVIM_MAIN$" $vimrc > /dev/null 2>&1
 if [ $? -ne 0 ];then
-    echo "source $MYVIM_MAIN" >> ~/.vimrc
+    echo "source $MYVIM_MAIN" >> $vimrc
 fi
 
 if [ ! -d $MYVIM_PATH/bundles/vundle ];then
@@ -40,7 +47,6 @@ fi
 
 vim +BundleUpdate +qall || exit 1
 
-os=`uname -s`
 if [ $os = 'Linux' ];then
     yum install -y ctags || exit 1
     yum install -y cmake || exit 1
