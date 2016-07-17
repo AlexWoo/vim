@@ -44,10 +44,11 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'Valloric/ListToggle'
 Bundle 'scrooloose/syntastic'
 
+" quoto completion
+Bundle 'Raimondi/delimitMate'
+
 filetype plugin indent on
 
-" quoto completion
-"Bundle 'Raimondi/delimitMate'
 " html/xml tag completion
 "Bundle 'docunext/closetag.vim'
 "

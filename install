@@ -49,5 +49,7 @@ elif [ $os = 'Darwin' ];then
     brew install cmake || exit 1
 fi
 
-/usr/local/myvim/bundles/YouCompleteMe/install.sh --clang-completer
+if [ ! -f /usr/local/myvim/bundles/YouCompleteMe/third_party/ycmd/ycm_core.so ];then
+    /usr/local/myvim/bundles/YouCompleteMe/install.sh --clang-completer
+fi
 
