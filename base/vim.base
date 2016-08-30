@@ -35,7 +35,7 @@ set cul         " 高亮光标所在行
 set cuc         " 高亮光标所在列
 set nowrap      " 取消换行
 
-set scrolloff=5 " 光标移动到buffer的顶部和底部时保持行距离
+set scrolloff=7 " 光标移动到buffer的顶部和底部时保持行距离
 
 " 状态栏
 "有 vim-airline, 可以下面这一行
@@ -60,6 +60,12 @@ set shiftwidth=4
 " 自动缩进
 set autoindent
 set smartindent
+
+" Mac 下 delete 键删除问题
+set backspace=2
+
+" 打开文件时光标定位到上次打开的位置
+autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 搜索管理

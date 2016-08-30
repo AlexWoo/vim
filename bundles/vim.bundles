@@ -13,21 +13,20 @@ Bundle 'gmarik/vundle'
 "==========================================
 " Skeleton manager
 "==========================================
-" 窗口管理
-Bundle 'winmanager'
-
-" 已打开的文件
+" MiniBufExplorer
 Bundle 'minibufexpl.vim'
 
-" 导航栏
+" NerdTree
 Bundle 'scrooloose/nerdtree'
 
-" 标签栏
+" TagBar
 Bundle 'majutsushi/tagbar'
 
-" 状态栏
+" WinManager
+Bundle 'winmanager'
+
+" airline
 Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
 
 "==========================================
 " Theme manager

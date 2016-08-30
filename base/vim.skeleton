@@ -1,39 +1,46 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" NerdTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:NERDTree_title="[NERDTree]"
+function! NERDTree_Start()
+  exe 'q'
+  exe 'NERDTree'
+endfunction
+function! NERDTree_IsValid()
+  return 1
+endfunction
+
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" TagBar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tagbar
+"let g:tagbar_autofocus = 1
+map <c-t> :TagbarToggle<CR>
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 窗口管理
+"" WinManager
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 只使用 winmanager 调整窗口
+let g:winManagerWindowLayout='NERDTree'
+let g:persistentBehaviour=0
+let g:defaultExplorer=1
+map <c-w><c-t> :WMToggle<cr>
+
+autocmd VimEnter * WMToggle
+"autocmd VimEnter * 2wincmd p
+
 nmap    w=  :resize +3<CR>
 nmap    w-  :resize -3<CR>
 nmap    w]  :vertical resize +3<CR>
 nmap    w[  :vertical resize -3<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" 导航栏
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nerdtree
-map <c-n> :NERDTreeToggle<CR>
-let NERDTreeHighlightCursorline=1
-let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$']
-let g:NERDTreeMapOpenSplit = 's'
-let g:NERDTreeMapOpenVSplit = 'v'
-" if open none, nerdtree when vim startup, otherwise, nerdtree will close
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-" open or close nerdtree key
-" other config
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" 标签栏
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tagbar
-let g:tagbar_autofocus = 1
-map <c-t> :TagbarToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 状态栏
+"" AirLine
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline-themes
 let g:molokai = 1
