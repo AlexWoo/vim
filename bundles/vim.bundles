@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 " Skeleton manager
 "==========================================
 " MiniBufExplorer
-Bundle 'minibufexpl.vim'
+Bundle 'fholgado/minibufexpl.vim'
 
 " NerdTree
 Bundle 'scrooloose/nerdtree'
@@ -23,7 +23,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 
 " WinManager
-Bundle 'winmanager'
+Bundle 'anscoral/winmanager.vim'
 
 " airline
 Bundle 'vim-airline/vim-airline'

@@ -1,17 +1,23 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" MiniBufExplorer
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:miniBufExplorerMoreThanOne=0
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" NerdTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTree_title="[NERDTree]"
 function! NERDTree_Start()
-  exe 'q'
   exe 'NERDTree'
 endfunction
 function! NERDTree_IsValid()
   return 1
 endfunction
-
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -27,11 +33,13 @@ map <c-t> :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:winManagerWindowLayout='NERDTree'
 let g:persistentBehaviour=0
+let g:winManagerWidth=20
 let g:defaultExplorer=1
 map <c-w><c-t> :WMToggle<cr>
+map <c-w><c-f> :FirstExplorerWindow<cr>
+map <c-w><c-b> :BottomExplorerWindow<cr>
 
 autocmd VimEnter * WMToggle
-"autocmd VimEnter * 2wincmd p
 
 nmap    w=  :resize +3<CR>
 nmap    w-  :resize -3<CR>
