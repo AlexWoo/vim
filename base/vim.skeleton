@@ -1,60 +1,84 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" MiniBufExplorer
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:miniBufExplorerMoreThanOne=0
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" NerdTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTree_title="[NERDTree]"
-function! NERDTree_Start()
-  exe 'NERDTree'
-endfunction
-function! NERDTree_IsValid()
-  return 1
-endfunction
+" open a NERDTree automatically when vim starts up
+autocmd vimenter * NERDTree
 
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" key or shortcut to open NERDTree: Ctrl + n
+map <c-n> :NERDTreeToggle<CR>
+
+let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
+
+let NERDTreeWinSize=20
+
+let NERDTreeHighlightCursorline=1
+
+let g:NERDTreeMapOpenSplit = 's'
+let g:NERDTreeMapOpenVSplit = 'v'
+
+
+map <c-b> <plug>NERDTreeTabsToggle<CR>
+" 关闭同步
+let g:nerdtree_tabs_synchronize_view=0
+let g:nerdtree_tabs_synchronize_focus=0
+" 是否自动开启nerdtree
+" thank to @ListenerRi, see https://github.com/wklken/k-vim/issues/165
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_gui_startup=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" TagBar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tagbar
-"let g:tagbar_autofocus = 1
+"let g:tagbar_autofocus=1
+
+" key or shortcut to open NERDTree: Ctrl + t
 map <c-t> :TagbarToggle<CR>
 
+let g:tagbar_width = 30
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" WinManager
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:winManagerWindowLayout='NERDTree'
-let g:persistentBehaviour=0
-let g:winManagerWidth=20
-let g:defaultExplorer=1
-map <c-w><c-t> :WMToggle<cr>
-map <c-w><c-f> :FirstExplorerWindow<cr>
-map <c-w><c-b> :BottomExplorerWindow<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" CtrlP
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
-autocmd VimEnter * WMToggle
+let g:ctrlp_working_path_mode = 'ra'
 
-nmap    w=  :resize +3<CR>
-nmap    w-  :resize -3<CR>
-nmap    w]  :vertical resize +3<CR>
-nmap    w[  :vertical resize -3<CR>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" AirLine
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-airline-themes
-let g:molokai = 1
+nnoremap <c-f> :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
 
-" vim-airline
-" set laststatus=2 in vim.base, for opening vim-airline
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+let g:ctrlp_extensions = ['funky']
+
+nmap \ <Plug>CtrlSFCwordPath<CR>
+let g:ctrlsf_position = 'below'
+let g:ctrlsf_winsize = '30%'
+let g:ctrlsf_auto_close = 0
+let g:ctrlsf_confirm_save = 0
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" Note: cannot use <CR> or <C-m> for open
+" Use : <sapce> or <tab>
+let g:ctrlsf_mapping = {
+    \ "open"  : "<Space>",
+    \ "openb" : "O",
+    \ "tab"   : "t",
+    \ "tabb"  : "T",
+    \ "prevw" : "p",
+    \ "quit"  : "q",
+    \ "next"  : "<C-J>",
+    \ "prev"  : "<C-K>",
+    \ "pquit" : "q",
+    \ }

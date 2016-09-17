@@ -13,25 +13,26 @@ Bundle 'gmarik/vundle'
 "==========================================
 " Skeleton manager
 "==========================================
-" MiniBufExplorer
-Bundle 'fholgado/minibufexpl.vim'
-
-" NerdTree
+" nerdtree
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 
-" TagBar
+" tagbar
 Bundle 'majutsushi/tagbar'
 
-" WinManager
-Bundle 'anscoral/winmanager.vim'
+" status line
+Bundle 'Lokaltog/vim-powerline'
 
-" airline
-Bundle 'vim-airline/vim-airline'
+" ctrlp
+Bundle 'kien/ctrlp.vim'
+Bundle 'tacahiroy/ctrlp-funky'
+Bundle 'dyng/ctrlsf.vim'
 
 "==========================================
 " Theme manager
 "==========================================
 Bundle 'tomasr/molokai'
+Bundle 'altercation/solarized'
 Bundle 'chriskempson/vim-tomorrow-theme'
 
 "==========================================
@@ -40,67 +41,27 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 " Fast edit
 " Code completion
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'Valloric/ListToggle'
 Bundle 'scrooloose/syntastic'
+Bundle 'klen/python-mode'
+
+" ultisnips
+Bundle 'SirVer/ultisnips'
+
+" fast commenter
+Bundle 'scrooloose/nerdcommenter'
 
 " quoto completion
 Bundle 'Raimondi/delimitMate'
+Bundle 'tpope/vim-surround'
+
+" align
+Bundle 'godlygeek/tabular'
 
 " white space trailing
 Bundle 'bronson/vim-trailing-whitespace'
 
+" fast move
+Bundle 'easymotion/vim-easymotion'
+
 filetype plugin indent on
 
-" html/xml tag completion
-"Bundle 'docunext/closetag.vim'
-"
-"Bundle 'scrooloose/nerdcommenter'
-"
-"Bundle 'tpope/vim-surround'
-"
-"
-"Bundle 'junegunn/vim-easy-align'
-"
-"Bundle 'terryma/vim-expand-region'
-"
-"Bundle 'terryma/vim-multiple-cursors'
-"
-"Bundle 'kana/vim-textobj-user.git'
-"
-"Bundle 'kana/vim-textobj-line'
-"
-"Bundle 'kana/vim-textobj-entire.git'
-"
-"Bundle 'kana/vim-textobj-indent.git'
-"
-"Bundle 'ctrlpvim/ctrlp.vim'
-"
-"Bundle 'tacahiroy/ctrlp-funky'
-"
-"Bundle "dyng/ctrlsf.vim"
-"
-"Bundle 'tpope/vim-fugitive'
-"
-"Bundle 'airblade/vim-gitgutter'
-"
-"Bundle 'sjl/gundo.vim'
-
-
-" Fast jump
-"
-"Bundle 'Lokaltog/vim-easymotion'
-"
-"Bundle 'vim-scripts/matchit.zip'
-
-
-
-
-" Edit
-
-" C/C++
-
-" Python
-"Bundle 'kevinw/pyflakes-vim'
-"Bundle 'hdima/python-syntax'
-
-" Lua

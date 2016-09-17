@@ -48,9 +48,11 @@ fi
 vim +BundleUpdate +qall || exit 1
 
 if [ $os = 'Linux' ];then
+    yum install -y the_silver_searcher || exit 1
     yum install -y ctags || exit 1
     yum install -y cmake || exit 1
 elif [ $os = 'Darwin' ];then
+    brew install the_silver_searcher || exit 1
     brew install ctags || exit 1
     brew install cmake || exit 1
 fi

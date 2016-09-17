@@ -27,12 +27,12 @@
 
 #### 总体
 
-打开 nerdtree
+打开或关闭 nerdtree
 
 	<Ctl> + n
 	:NERDTreeToggle
 
-打开 tagbar
+打开或关闭 tagbar
 
 	<Ctl> + t
 	:TagbarToggle
@@ -48,22 +48,6 @@
 光标自动在左右侧窗口切换
 
 	<Ctl> + w + w
-
-增加窗口高度
-
-	w=
-
-降低窗口高度
-
-	w-
-
-增加窗口宽度
-
-	w]
-
-减少串口宽度
-
-	w[
 
 #### 已打开的文件
 
