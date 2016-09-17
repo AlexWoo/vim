@@ -64,7 +64,7 @@ let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_extensions = ['funky']
 
 nmap \ <Plug>CtrlSFCwordPath<CR>
-let g:ctrlsf_position = 'below'
+let g:ctrlsf_position = 'bottom'
 let g:ctrlsf_winsize = '30%'
 let g:ctrlsf_auto_close = 0
 let g:ctrlsf_confirm_save = 0
