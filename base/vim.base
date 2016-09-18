@@ -36,12 +36,6 @@ set cuc         " 高亮光标所在列
 set nowrap      " 取消换行
 
 set scrolloff=7 " 光标移动到buffer的顶部和底部时保持行距离
-
-" 状态栏
-"有 vim-airline, 可以下面这一行
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
-"状态行显示的内容
-set laststatus=2    " 启动显示状态行(1),总是显示状态行(2)
 set showmode    " 左下角显示当前 vim 模式
 set showcmd     " 右下角显示正在输入的命令
 
@@ -123,9 +117,3 @@ highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 快捷键
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap q :q<CR>
-nnoremap w :w<CR>
-nnoremap qa :qall<CR>

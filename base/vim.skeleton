@@ -20,15 +20,6 @@ let g:NERDTreeMapOpenSplit = 's'
 let g:NERDTreeMapOpenVSplit = 'v'
 
 
-map <c-b> <plug>NERDTreeTabsToggle<CR>
-" 关闭同步
-let g:nerdtree_tabs_synchronize_view=0
-let g:nerdtree_tabs_synchronize_focus=0
-" 是否自动开启nerdtree
-" thank to @ListenerRi, see https://github.com/wklken/k-vim/issues/165
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_open_on_gui_startup=1
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" TagBar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -39,6 +30,7 @@ let g:nerdtree_tabs_open_on_gui_startup=1
 map <c-t> :TagbarToggle<CR>
 
 let g:tagbar_width = 30
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" CtrlP
