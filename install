@@ -3,12 +3,17 @@
 usage()
 {
     cmd=`basename $0`
-    echo "usage:$cmd"
+    echo "usage:$cmd [-s]"
     exit 0
 }
 
-if [ $# -ne 0 ];then
+if [ $# -gt 1 ];then
     usage
+fi
+
+skip_bundle=0
+if [ "$1" = "-s" ];then
+    skip_bundle=1
 fi
 
 os=`uname -s`
@@ -45,16 +50,18 @@ if [ ! -d $MYVIM_PATH/bundles/vundle ];then
     git clone https://github.com/VundleVim/Vundle.vim.git $MYVIM_PATH/bundles/vundle || exit 1
 fi
 
-vim +BundleUpdate +qall || exit 1
+if [ $skip_bundle -eq 0 ];then
+    vim +BundleUpdate +qall || exit 1
+fi
 
 if [ $os = 'Linux' ];then
-    yum install -y the_silver_searcher || exit 1
-    yum install -y ctags || exit 1
-    yum install -y cmake || exit 1
+    yum install -y the_silver_searcher
+    yum install -y ctags
+    yum install -y cmake
 elif [ $os = 'Darwin' ];then
-    brew install the_silver_searcher || exit 1
-    brew install ctags || exit 1
-    brew install cmake || exit 1
+    brew install the_silver_searcher
+    brew install ctags
+    brew install cmake
 fi
 
 if [ ! -f /usr/local/myvim/bundles/YouCompleteMe/third_party/ycmd/ycm_core.so ];then

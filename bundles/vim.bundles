@@ -13,6 +13,9 @@ Bundle 'gmarik/vundle'
 "==========================================
 " Skeleton manager
 "==========================================
+" bufexplorer
+Bundle 'jlanzarotta/bufexplorer'
+
 " nerdtree
 Bundle 'scrooloose/nerdtree'
 
