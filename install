@@ -41,6 +41,14 @@ cp -rf ./bundles  $MYVIM_PATH/
 cp -rf ./base     $MYVIM_PATH/
 cp -rf ./coding   $MYVIM_PATH/
 
+mkdir -p /usr/local/include/ycm_include
+mkdir -p ~/.vim
+cp -rf ./tmpl/ycm_extra_conf.py ~/.vim/ycm_extra_conf.py
+if [ $os = 'Darwin' ];then
+    cp -rf /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/* /usr/local/include
+fi
+cp -rf ./ycmconf /usr/local/bin/
+
 grep "^source $MYVIM_MAIN$" $vimrc > /dev/null 2>&1
 if [ $? -ne 0 ];then
     echo "source $MYVIM_MAIN" >> $vimrc
@@ -54,14 +62,16 @@ if [ $skip_bundle -eq 0 ];then
     vim +BundleUpdate +qall || exit 1
 fi
 
-if [ $os = 'Linux' ];then
-    yum install -y the_silver_searcher
-    yum install -y ctags
-    yum install -y cmake
-elif [ $os = 'Darwin' ];then
-    brew install the_silver_searcher
-    brew install ctags
-    brew install cmake
+if [ $skip_bundle -eq 0 ];then
+    if [ $os = 'Linux' ];then
+        yum install -y the_silver_searcher
+        yum install -y ctags
+        yum install -y cmake
+    elif [ $os = 'Darwin' ];then
+        brew install the_silver_searcher
+        brew install ctags
+        brew install cmake
+    fi
 fi
 
 if [ ! -f /usr/local/myvim/bundles/YouCompleteMe/third_party/ycmd/ycm_core.so ];then
