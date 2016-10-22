@@ -11,15 +11,17 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 
 " 跳转到定义处, 分屏打开
 let g:ycm_goto_buffer_command = 'horizontal-split'
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
+nnoremap <leader>g  :YcmCompleter GoTo<CR>
 
 if !empty(glob("~/.vim/ycm_extra_conf.py"))
     let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
 endif
 
 " 直接触发自动补全 insert模式下
-let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_key_invoke_completion = '<C-a>'
 " 黑名单,不启用
 let g:ycm_filetype_blacklist = {
       \ 'tagbar' : 1,
