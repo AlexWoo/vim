@@ -64,7 +64,7 @@ fi
 
 if [ $skip_bundle -eq 0 ];then
     if [ $os = 'Linux' ];then
-        yum install -y the_silver_searcher
+        yum install -y epel-release.noarch the_silver_searcher
         yum install -y ctags
         yum install -y cmake
     elif [ $os = 'Darwin' ];then

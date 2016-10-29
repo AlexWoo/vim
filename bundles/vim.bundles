@@ -48,6 +48,7 @@ Bundle 'klen/python-mode'
 
 " ultisnips
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 
 " fast commenter
 Bundle 'scrooloose/nerdcommenter'
