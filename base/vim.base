@@ -53,10 +53,9 @@ set shiftround  " 缩进时，取整 use multiple of shiftwidth when indenting w
 "将tab替换为空格
 nmap tt :%s/\t/    /g<CR>
 " 统一缩进为4
-set softtabstop=4
+"set softtabstop=4 " 加上这一行回车时会按 Tab 方式进行回车
 set shiftwidth=4
 " 自动缩进
-set autoindent
 set smartindent
 
 " Mac 下 delete 键删除问题
