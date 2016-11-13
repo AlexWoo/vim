@@ -43,6 +43,7 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 " Fast edit
 " Code completion
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/ListToggle'
 Bundle 'scrooloose/syntastic'
 Bundle 'klen/python-mode'
 
