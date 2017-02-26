@@ -1,0 +1,11 @@
+#!/bin/bash
+
+res=`env |grep GOPATH`
+if [ "$res" == "" ];then
+    exit 0
+fi
+
+go get github.com/golang/tools
+mkdir -p $GOPATH/src/golang.org/x
+cp -rf $GOPATH/src/github.com/golang/tools $GOPATH/src/golang.org/x/
+
