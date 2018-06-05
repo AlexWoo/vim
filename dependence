@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ ! -f /etc/yum.repos.d/mcepl-vim8-epel-7.repo ];then
+    wget -O /etc/yum.repos.d/mcepl-vim8-epel-7.repo https://copr.fedorainfracloud.org/coprs/mcepl/vim8/repo/epel-7/mcepl-vim8-epel-7.repo
+    yum remove -y vim-common vim-minimal vim-filesystem vim-enhanced
+    yum install -y vim sudo
+fi
+
+yum install -y clang glibc-static libstdc++-static python-devel
