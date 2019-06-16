@@ -24,11 +24,6 @@ elif [ $os = 'Darwin' ];then
 fi
 
 # test vim installed
-vim --version > /dev/null 2>&1
-if [ $? -ne 0 ];then
-    echo "vim not installed!!!"
-    exit 1
-fi
 
 MYVIM_PATH=/usr/local/myvim
 MYVIM_MAIN=$MYVIM_PATH/'vim.main'
@@ -75,6 +70,6 @@ if [ $skip_bundle -eq 0 ];then
 fi
 
 if [ ! -f /usr/local/myvim/bundles/YouCompleteMe/third_party/ycmd/ycm_core.so ];then
-    /usr/local/myvim/bundles/YouCompleteMe/install.sh --clang-completer
+    /usr/local/myvim/bundles/YouCompleteMe/install.sh --clang-completer --go-completer
 fi
 

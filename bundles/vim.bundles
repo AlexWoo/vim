@@ -47,7 +47,6 @@ Bundle 'Valloric/ListToggle'
 Bundle 'scrooloose/syntastic'
 Bundle 'klen/python-mode'
 Bundle 'fatih/vim-go'
-Bundle 'nsf/gocode', {'rtp': 'vim/'}
 
 " ultisnips
 Bundle 'SirVer/ultisnips'
