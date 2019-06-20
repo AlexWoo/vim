@@ -26,6 +26,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-powerline'
 
 " ctrlp
+Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'dyng/ctrlsf.vim'
